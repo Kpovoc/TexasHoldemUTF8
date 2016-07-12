@@ -4,8 +4,8 @@
 #include <string>
 
 enum card_suit_t {S_EMPTY, HEARTS, CLUBS, DIAMONDS, SPADES};
-enum card_value_t {V_EMPTY, ACE, TWO, THREE, FOUR, FIVE, SIX,
-		   SEVEN,EIGHT, NINE, TEN, JACK, QUEEN, KING};
+enum card_value_t {V_EMPTY, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
+		   EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE};
 class Card
 {
  private:

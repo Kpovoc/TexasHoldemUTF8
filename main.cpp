@@ -1,22 +1,17 @@
 #include <iostream>
-#include "interface/GameInterface.hpp"
 using namespace std;
-
-void printCards(vector<Card> cards)
-{
-  for (vector<Card>::iterator it = cards.begin(); it != cards.end(); ++it){
-    Card card = *it;
-    cout << card.getCardName() << ", ";
-  }
-  cout << endl;
-}
 
 int main()
 {
-  GameInterface game = GameInterface();
-  game.startGame();
+  // GameInterface game = GameInterface();
+  // game.startGame();
 
   // string test = "";
+  
+  /* temp Hand test suite */
+  // test_isFlush();
+  // test_isStraightFlush();
+  // runHandTestSuite();
   
   return 0;
 }

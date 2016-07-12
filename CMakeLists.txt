@@ -10,9 +10,9 @@ include_directories(${PROJECT_SOURCE_DIR})
 set(src_dir ${PROJECT_SOURCE_DIR})
 set(lib_dir ${PROJECT_SOURCE_DIR}/lib)
 set(int_dir ${PROJECT_SOURCE_DIR}/interface)
+set(tests_dir ${PROJECT_SOURCE_DIR}/tests)
 
-# Sources
-set(sources
+set(library
   ${lib_dir}/Card.hpp
   ${lib_dir}/Card.cpp
   ${lib_dir}/CardDeck.hpp
@@ -21,6 +21,9 @@ set(sources
   ${lib_dir}/Player.cpp
   ${lib_dir}/Game.hpp
   ${lib_dir}/Game.cpp
+  ${lib_dir}/Hand.hpp
+  ${lib_dir}/Hand.cpp)
+set(interface
   ${int_dir}/GameBoard.hpp
   ${int_dir}/GameBoard.cpp
   ${int_dir}/GameStatsDisplay.hpp
@@ -34,6 +37,20 @@ set(sources
   ${int_dir}/TextBoxDisplay.hpp
   ${int_dir}/TextBoxDisplay.cpp
   ${int_dir}/GameInterface.hpp
-  ${int_dir}/GameInterface.cpp
+  ${int_dir}/GameInterface.cpp)
+set(tests
+  ${tests_dir}/HandTest.hpp
+  ${tests_dir}/HandTest.cpp
+  ${src_dir}/tests.cpp)
+# Sources
+set(main_build
+  # ${tests}
+  ${library}
+  ${interface}
   ${src_dir}/main.cpp)
-add_executable(cards ${sources})
+set(test_build
+  ${library}
+  ${interface}
+  ${tests})
+add_executable(holdem ${main_build})
+add_executable(tests ${test_build})

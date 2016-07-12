@@ -17,6 +17,7 @@ private:
   InPlayDisplay inplay;
   PlayerHandDisplay player_hand;
   TextBoxDisplay textbox;
+  
   void drawBoard();
 
   void updateWinningHand();
@@ -25,12 +26,6 @@ private:
   void updateInPlayRiver();
   void updateInPlayShowdown();
   void updatePlayerHand();
-  void drawWinningHand();
-  void drawCardsInPlay();
-  void drawPlayerCards();
-  void drawTextDisplay();
-  void drawEmptyRow();
-  void drawEmptyTextRow();
   
 public:
   GameInterface();

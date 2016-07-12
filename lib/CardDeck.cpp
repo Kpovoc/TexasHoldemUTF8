@@ -6,7 +6,7 @@ using namespace std;
 CardDeck :: CardDeck()
 {
   for (card_suit_t i = HEARTS; i <= SPADES; i = card_suit_t(i + 1))
-    for (card_value_t j = ACE; j <= KING; j = card_value_t(j + 1))
+    for (card_value_t j = TWO; j <= ACE; j = card_value_t(j + 1))
       masterDeck.push_back(Card(i, j));
 
   deck = masterDeck;
