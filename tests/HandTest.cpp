@@ -35,14 +35,12 @@ void HandTest::test_isFlush()
 		       Card(HEARTS,THREE),
 		       Card(HEARTS,KING),
 		       Card(HEARTS,FIVE),
-		       Card(HEARTS,FOUR),
+		       Card(CLUBS,FOUR),
 		       Card(CLUBS,QUEEN),
 		       Card(HEARTS,FOUR));
   /* 1, 2, 3, 4 */
   vector<int> board_pos = hand.getBoardCardPositionsUsed();
-  for(vector<int>::iterator it = board_pos.begin(); it != board_pos.end(); ++it)
-    cout << *it << ", ";
-  cout << endl;
+
   if(hand.getHandName() == FLUSH &&
      hand.getHighCardValues()[0] == KING &&
      board_pos[0] == 1 &&

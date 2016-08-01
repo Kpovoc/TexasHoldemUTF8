@@ -3,8 +3,8 @@
 #include <algorithm>
 using namespace std;
 
-Hand::Hand(vector<Card> pc, vector<Card> bc)
-  : player_cards(pc), board_cards(bc)
+Hand::Hand(vector<Card> bc, vector<Card> pc)
+  : board_cards(bc), player_cards(pc)
 {
   for (vector<Card>::iterator it = board_cards.begin(); it != board_cards.end(); ++it)
     full_set.push_back(*it);
@@ -253,7 +253,12 @@ vector<Card> Hand::sortHighToLow(vector<Card> set)
     sortedVector.push_back(*comp);
     set.erase(comp);
   }
-
+  
+  /* Testing Output, RWD*/
+  //for(vector<Card>::iterator it = sortedVector.begin(); it != sortedVector.end(); ++it)
+  //  cout << it->getCardName() << " ";
+  //cout << endl;
+  
   return sortedVector;
 }
 
@@ -281,8 +286,8 @@ void Hand::determineBoardCardsUsed()
   for(vector<Card>::iterator it = working_set.begin(); it != working_set.end(); ++it)
     for(int i = 0; i < (int)board_cards.size(); ++i)
       if(it->getCardName() == board_cards[i].getCardName())
-	board_card_positions_used.push_back(i);
-
+	board_card_positions_used.push_back(i+1);
+      
   board_card_positions_used = sortVectorIntLowToHigh(board_card_positions_used);
 }
 /* TODO: replace algorithm with Quick Sort */

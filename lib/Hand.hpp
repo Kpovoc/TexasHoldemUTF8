@@ -13,8 +13,8 @@ private:
   hand_t name;
   std::vector<int> board_card_positions_used;
   std::vector<card_value_t> high_values; // 1 - 3 values.
-  std::vector<Card> player_cards; // 2 cards
   std::vector<Card> board_cards;  // 5 cards
+  std::vector<Card> player_cards; // 2 cards
   std::vector<Card> working_set;
   std::vector<Card> full_set;
 
